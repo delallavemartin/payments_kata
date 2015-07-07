@@ -34,25 +34,25 @@ public class PaymentsTest{
 
     @Test
     public void testPhysicalPayment(){
-        Payment payment = new PhysicalPaymentDecorator(new RegularPayment("Stuffs related to Payment"));
+        Payment payment = new SendToAgentPaymentDecorator(new PhysicalPaymentDecorator(new RegularPayment("Stuffs related to Payment")));
         assertTrue(payment.proccess());
     }
 
     @Test
     public void testBookPayment(){
-        Payment payment = new BookPaymentDecorator(new RegularPayment("Stuffs related to Payment"));
+        Payment payment = new SendToAgentPaymentDecorator(new BookPaymentDecorator(new RegularPayment("Stuffs related to Payment")));
         assertTrue(payment.proccess());
     }
 
      @Test
     public void testMembershipPayment(){
-        Payment payment = new MembershipPaymentDecorator(new RegularPayment("Stuffs related to Payment"));
+        Payment payment = new EmailPaymentDecorator(new MembershipPaymentDecorator(new RegularPayment("Stuffs related to Payment")));
         assertTrue(payment.proccess());
     }
 
     @Test
     public void testUpgradeToMembershipPayment(){
-        Payment payment = new UpgradeToMembershipPaymentDecorator(new RegularPayment("Stuffs related to Payment"));
+        Payment payment = new EmailPaymentDecorator(new UpgradeToMembershipPaymentDecorator(new RegularPayment("Stuffs related to Payment")));
         assertTrue(payment.proccess());
     }
 

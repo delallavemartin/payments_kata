@@ -12,8 +12,6 @@ public class MembershipPaymentDecorator extends Decorator{
 	public Boolean proccess(){
 		super.proccess();
 		System.out.println("Activate Membership!!");
-		//TODO - Code duplicated with UpgradeMembership.
-		System.out.println("Activate Membership!!, email Send it to the owner");
 		return true;
 	}
 }

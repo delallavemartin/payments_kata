@@ -12,8 +12,6 @@ public class UpgradeToMembershipPaymentDecorator extends Decorator{
 	public Boolean proccess(){
 		super.proccess();
 		System.out.println("Upgrade Applied!!");
-		//TODO - Code duplicated with Membership.
-		System.out.println("Upgrade Applied!!, email Send it to the owner");
 		return true;
 	}
 }
